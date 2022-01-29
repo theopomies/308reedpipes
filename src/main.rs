@@ -39,6 +39,6 @@ fn main() {
 fn program(arguments: Arguments) -> Result<(), String> {
     let mut s = Spline::from(arguments);
     s.apply();
-    println!("{}", s);
+    print!("{}", s);
     Ok(())
 }
