@@ -1,8 +1,10 @@
 use std::process::exit;
 
 mod args;
+mod spline;
 
 use args::{Arguments, Commands};
+use spline::Spline;
 
 const HELP_MESSAGE: &str = "USAGE
 \t./308reedpipes r0 r5 r10 r15 r20 n
@@ -35,5 +37,8 @@ fn main() {
 }
 
 fn program(arguments: Arguments) -> Result<(), String> {
+    let mut s = Spline::from(arguments);
+    s.apply();
+    println!("{}", s);
     Ok(())
 }
